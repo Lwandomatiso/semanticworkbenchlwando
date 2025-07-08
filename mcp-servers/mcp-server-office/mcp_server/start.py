@@ -94,7 +94,7 @@ def main() -> None:
     mcp = create_mcp_server()
     if args.transport == "sse":
         mcp.settings.port = args.port
-
+        mcp.settings.host = "0.0.0.0"  # Explicitly set host
     try:
         mcp.run(transport=args.transport)
     except KeyboardInterrupt:
